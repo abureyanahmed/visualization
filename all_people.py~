@@ -1,0 +1,8 @@
+import sqlite3
+conn = sqlite3.connect('uofadata.db')
+
+
+authors = conn.execute("SELECT rowid, auid, name, researcharea FROM authorsummary WHERE rowid <= 20")
+
+for author in authors:
+	print(author[3])
